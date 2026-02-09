@@ -2,6 +2,10 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## 프로젝트 개요
+
+**LogWatch Admin** — 실시간 로그 수집, 분석 및 모니터링을 위한 웹 기반 어드민 대시보드. 로그 스트림 모니터링, 키워드 검색, 알림 규칙 설정, 시스템 관리 기능을 제공.
+
 ## 명령어
 
 ```bash
@@ -45,3 +49,15 @@ src/
 - 컴포넌트는 named export 사용 (`export function Button`), default export 사용하지 않음
 - API 라우트는 `next/server`의 `NextResponse.json()`으로 응답 반환
 - 사용자 대면 문자열과 주석에 한국어 사용 가능
+
+## 주요 API 엔드포인트
+
+| 메서드 | 경로 | 설명 |
+|--------|------|------|
+| `GET` | `/api/logs` | 로그 목록 조회 (필터링, 페이지네이션) |
+| `GET` | `/api/logs/:id` | 로그 상세 조회 |
+| `GET` | `/api/alerts` | 알림 규칙 목록 |
+| `POST` | `/api/alerts` | 알림 규칙 생성 |
+| `GET` | `/api/stats` | 대시보드 통계 데이터 (차트, 지표) |
+| `POST` | `/api/auth/login` | 로그인 |
+| `POST` | `/api/auth/register` | 회원가입 |
